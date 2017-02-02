@@ -1,0 +1,52 @@
+Script started on Wed 25 Jan 2017 12:37:58 PM EST
+
+[~/cis452/lab1]
+@arch07[1;33m -> [0mgcc -g sample1.c -lm
+
+[~/cis452/lab1]
+@arch07[1;33m -> [0m./a.out
+Hello, world.
+You are the 268435456.000000 person to write this program!
+
+[~/cis452/lab1]
+@arch07[1;33m -> [0mgdb a.out
+GNU gdb (GDB) Red Hat Enterprise Linux 7.6.1-94.el7
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-redhat-linux-gnu".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from /home/mcinteeg/cis452/lab1/a.out...done.
+(gdb) break 4
+Breakpoint 1 at 0x400625: file sample1.c, line 4.
+(gdb) r
+Starting program: /home/mcinteeg/cis452/lab1/a.out 
+
+Breakpoint 1, main () at sample1.c:6
+6	   double num = 0.0; 
+Missing separate debuginfos, use: debuginfo-install glibc-2.17-157.el7_3.1.x86_64
+(gdb) s
+7	   printf ("Hello, world.\n"); 
+(gdb) print num
+$1 = 0
+(gdb) s
+Hello, world.
+8	   num = pow(2, 28); 
+(gdb) s
+9	   printf ("You are the %f person to write this program!\n", num); 
+(gdb) print num
+$2 = 268435456
+(gdb) quit
+A debugging session is active.
+
+	Inferior 1 [process 24339] will be killed.
+
+Quit anyway? (y or n) y
+
+[~/cis452/lab1]
+@arch07[1;33m -> [0mexit
+
+Script done on Wed 25 Jan 2017 12:39:32 PM EST
