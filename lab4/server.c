@@ -44,7 +44,8 @@ int main(void)
 
 void * getFile(void *arg)
 {
-	char *filename = (char *) arg;  //casting arg as a char * to save it in filename
+	char filename[MAX_NAME_LENGTH];
+	strcpy(filename, (char *)arg);    //casting arg as a char * to save it in filename
 	int chance = rand() % 100;		 //choose rand number between 0 and 99
 
 	*( filename + (strlen(filename)-1) ) = '\0';  //strip off newline from filename (replace with null)
