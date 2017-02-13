@@ -1,5 +1,5 @@
 /*
-	CIS 452 Lab 5 - writer.c
+	CIS 452 Lab 5 - reader.c
 	Gaelen McIntee and Emily Wang
 	?/?/????
 */
@@ -23,13 +23,11 @@ char *shmAddr;
 
 int main(int argc, char *argv[])
 {
-
-	char input[SHM_SIZE];
 	int turn;
-	signal (SIGINT, quit);
+	signal(SIGINT, quit);
 
 	// Set Up –––––––––––––––––––––––––––
-	shmKey = ftok("writer", 'A');
+	shmKey = ftok("writer", 'A'); //use executable for the writer as file
 	if (shmKey == -1) {
 		perror("ftok()");
 		exit(1);
@@ -53,14 +51,8 @@ int main(int argc, char *argv[])
 		// Lockstep Synchronization goes here... idk how to do it tho
 
 		// Critical Section ––––––––––––––––––––
-		fprintf(stderr, "Enter a string: ");
-		fgets(input, SHM_SIZE, stdin);
-
-		strcpy(shmAddr, input);
-		// End Critical Section –––––––––––––––––
-
-		//fprintf(stderr, "Shared mem: %s", shmAddr);  // debug
-		//sleep(10); //for checking ipcs at runtime
+		fprintf(stderr, "Shared mem: %s", shmAddr);
+		//End Critical Section ––––––––––––––––
 	}
 
 }
@@ -75,11 +67,7 @@ void quit(int signum)
 		exit(1);
 	}
 
-	status = shmctl(shmId, IPC_RMID, 0);
-	if (status < 0) {
-		perror("shmctl()");
-		exit(1);
-   }
+	//reader does not mark shared mem for deletion... i think
 
-   exit(0);
+	exit(0);
 }
