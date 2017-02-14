@@ -7,3 +7,6 @@ w:
 
 r:
 	clang -Wall -g reader.c -o reader
+	
+tester:
+	clang -Wall -g testreader.c -o testreader
