@@ -1,1 +1,2 @@
+# Show all shared memory segments owned by me
 ipcs | grep mcinteeg

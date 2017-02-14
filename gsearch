@@ -1,1 +1,2 @@
+# Finds any of the "get..." system calls.
 man -k get | grep ^get
