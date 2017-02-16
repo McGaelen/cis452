@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
 		turn[ME]++;
 
 		// Critical Section –––––––––––––––––––
-		fprintf(stderr, "Read from shared mem: %s\n", text);
+		fprintf(stderr, "Read from shared mem: %s", text);
 		// End Critical Section –––––––––––––––
 
 		usleep(1);
