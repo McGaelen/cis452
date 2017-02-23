@@ -2,6 +2,13 @@
 	CIS 452 Lab 6 - Semaphores
 	Gaelen McIntee and Emily Wang
 	2/23/17
+
+	This was the original submission for the lab, but
+	is incorrect because it doesn't ensure maximum
+	concurrency since the semop() calls are outside
+	the for loops.  (It basically linearizes the problem,
+	the second process only goes to CS once the first process
+	has exited completely.)
 */
 
 #include <stdio.h>
@@ -63,26 +70,24 @@ int main (int argc, char *argv[])
 
 	if ( !(pid = fork()) )
 	{
+		// semop wait
+		if ( semop(semID, &sem_wait, 1) == -1 ) {
+			perror("semop wait");
+			exit(1);
+		}
 
-		for (i=0; i<loop; i++)
-		{
-			// semop wait
-			if ( semop(semID, &sem_wait, 1) == -1 ) {
-				perror("semop wait");
-				exit(1);
-			}
-			/* Critical Section ------------------*/
+		/* Critical Section ------------------*/
+		for (i=0; i<loop; i++) {
 			temp = shmPtr[0];
 			shmPtr[0] = shmPtr[1];
 			shmPtr[1] = temp;
-			/* End Critical Section -------------*/
-			// semop signal
-			if ( semop(semID, &sem_signal, 1) < 0 ) {
-				perror("semop signal");
-				exit(1);
-			}
-		}
+		} /* End Critical Section -------------*/
 
+		// semop signal
+		if ( semop(semID, &sem_signal, 1) < 0 ) {
+			perror("semop signal");
+			exit(1);
+		}
 
 		if (shmdt (shmPtr) < 0) {
 			perror ("shmdt()");
@@ -92,25 +97,24 @@ int main (int argc, char *argv[])
 	}
 	else // Parent
 	{
+		//semop wait
+		if ( semop(semID, &sem_wait, 1) == -1 ) {
+			perror("semop wait");
+			exit(1);
+		}
 
+		/* Critical Section ------------------*/
 		for (i=0; i<loop; i++) {
-			//semop wait
-			if ( semop(semID, &sem_wait, 1) == -1 ) {
-				perror("semop wait");
-				exit(1);
-			}
-			/* Critical Section ------------------*/
 			temp = shmPtr[0];
 			shmPtr[0] = shmPtr[1];
 			shmPtr[1] = temp;
-			/* End Critical Section -------------*/
-			// semop signal
-			if ( semop(semID, &sem_signal, 1) == -1 ) {
-				perror("semop signal");
-				exit(1);
-			}
-		}
+		} /* End Critical Section -------------*/
 
+		// semop signal
+		if ( semop(semID, &sem_signal, 1) == -1 ) {
+			perror("semop signal");
+			exit(1);
+		}
 	}
 	wait (&status); // Parent waits for child to exit
 	printf ("shmPtr[0]: %li\tshmPtr[1]: %li\n", shmPtr[0], shmPtr[1]);
