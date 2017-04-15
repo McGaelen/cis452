@@ -1,0 +1,19 @@
+Script started on Thu 06 Apr 2017 02:19:23 PM EDT
+
+[~/cis452/lab12-filesystem]
+@eos24[1;33m -> [0mls -l
+total 20
+-rwxr-xr-x 1 mcinteeg users 8944 Apr  6 14:18 [0m[01;32ma.out[0m*
+-rw-r--r-- 1 mcinteeg users  413 Apr  6 14:01 blah
+-rw-r--r-- 1 mcinteeg users    0 Apr  6 13:59 hello
+-rw-r--r-- 1 mcinteeg users  473 Apr  6 14:18 sample2.c
+-rw-r--r-- 1 mcinteeg users    0 Apr  6 14:19 typescript
+
+[~/cis452/lab12-filesystem]
+@eos24[1;33m -> [0m./a.out
+sample2.c  473                 a.out  8944                ..  4096                .  4096                typescript  0                   blah  413                 hello  0                   
+[~/cis452/lab12-filesystem]
+@eos24[1;33m -> [0meixt[K[K[Kxit
+exit
+
+Script done on Thu 06 Apr 2017 02:20:07 PM EDT

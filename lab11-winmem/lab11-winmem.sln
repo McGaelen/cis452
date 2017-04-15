@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lab11-winmem", "lab11-winmem.vcproj", "{ACB47E5D-7DF2-475B-B463-A8C87C1E3E75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACB47E5D-7DF2-475B-B463-A8C87C1E3E75}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ACB47E5D-7DF2-475B-B463-A8C87C1E3E75}.Debug|Win32.Build.0 = Debug|Win32
+		{ACB47E5D-7DF2-475B-B463-A8C87C1E3E75}.Release|Win32.ActiveCfg = Release|Win32
+		{ACB47E5D-7DF2-475B-B463-A8C87C1E3E75}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

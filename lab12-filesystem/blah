@@ -1,0 +1,19 @@
+Script started on Thu 06 Apr 2017 02:01:11 PM EDT
+
+[~/cis452/lab12-filesystem]
+@eos24[1;33m -> [0mls
+blah  hello  typescript
+
+[~/cis452/lab12-filesystem]
+@eos24[1;33m -> [0mls
+blah  hello  typescript
+
+[~/cis452/lab12-filesystem]
+@eos24[1;33m -> [0mls
+blah  hello  typescript
+
+[~/cis452/lab12-filesystem]
+@eos24[1;33m -> [0mexit
+exit
+
+Script done on Thu 06 Apr 2017 02:01:15 PM EDT

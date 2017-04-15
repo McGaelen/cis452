@@ -1,0 +1,18 @@
+00400000-00401000 r-xp 00000000 00:29 90244102                           /home/mcinteeg/cis452/lab9-memManagment/sample
+00600000-00601000 r--p 00000000 00:29 90244102                           /home/mcinteeg/cis452/lab9-memManagment/sample
+00601000-00602000 rw-p 00001000 00:29 90244102                           /home/mcinteeg/cis452/lab9-memManagment/sample
+01551000-01572000 rw-p 00000000 00:00 0                                  [heap]
+7fb2823b2000-7fb282568000 r-xp 00000000 08:02 134219738                  /usr/lib64/libc-2.17.so
+7fb282568000-7fb282768000 ---p 001b6000 08:02 134219738                  /usr/lib64/libc-2.17.so
+7fb282768000-7fb28276c000 r--p 001b6000 08:02 134219738                  /usr/lib64/libc-2.17.so
+7fb28276c000-7fb28276e000 rw-p 001ba000 08:02 134219738                  /usr/lib64/libc-2.17.so
+7fb28276e000-7fb282773000 rw-p 00000000 00:00 0 
+7fb282773000-7fb282793000 r-xp 00000000 08:02 134219729                  /usr/lib64/ld-2.17.so
+7fb28296e000-7fb282971000 rw-p 00000000 00:00 0 
+7fb28298f000-7fb282992000 rw-p 00000000 00:00 0 
+7fb282992000-7fb282993000 r--p 0001f000 08:02 134219729                  /usr/lib64/ld-2.17.so
+7fb282993000-7fb282994000 rw-p 00020000 08:02 134219729                  /usr/lib64/ld-2.17.so
+7fb282994000-7fb282995000 rw-p 00000000 00:00 0 
+7ffd4beff000-7ffd4bf20000 rw-p 00000000 00:00 0                          [stack]
+7ffd4bf8d000-7ffd4bf8f000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]

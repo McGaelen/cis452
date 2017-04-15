@@ -1,0 +1,6 @@
+Frequency of high-res counter:          3579545
+Period of hi-res counter (in ms):       0.000279365
+Duration of 1,000,000 iteration loop:   1.66865
+Duration of call to hi-res counter:     0.00111746
+
+Press any key to continue . . .
