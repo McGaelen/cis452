@@ -14,8 +14,8 @@ int main (int argc, char **argv)
 	*filepath = '\0';
 	*newlink = '\0';
 
-	if (argc < 2) {
-		fprintf(stderr, "Usage: ./ln <filepath> <newlink>");
+	if (argc < 3) {
+		fprintf(stderr, "Usage: ./ln <filepath> <newlink>\n");
 		exit(1);
 	}
 
@@ -41,7 +41,7 @@ int main (int argc, char **argv)
 			perror("Error symlinking");
 			exit(1);
 		}
-		fprintf(stderr, "File %s sym linked to %s.", filepath, newlink);
+		fprintf(stderr, "File %s sym linked to %s.\n", filepath, newlink);
 	}
 	else
 	{
@@ -49,6 +49,6 @@ int main (int argc, char **argv)
 			perror("Error hardlinking");
 			exit(1);
 		}
-		fprintf(stderr, "File %s hard linked to %s.", filepath, newlink);
+		fprintf(stderr, "File %s hard linked to %s.\n", filepath, newlink);
 	}
 }
